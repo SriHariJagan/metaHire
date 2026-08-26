@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white font-sans text-brand-blue antialiased;
+  }
+  ::selection {
+    @apply bg-brand-green/20 text-brand-blue;
+  }
+}
+
+@layer components {
+  .gradient-green-blue {
+    @apply bg-gradient-to-br from-brand-green to-brand-blue;
+  }
+  .gradient-blue-black {
+    @apply bg-gradient-to-br from-brand-blue to-brand-black;
+  }
+  .gradient-green-black {
+    @apply bg-gradient-to-br from-brand-green to-brand-black;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-green to-brand-blue;
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  .glass-card-light {
+    @apply bg-white/80 backdrop-blur-xl border border-brand-gray-light;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

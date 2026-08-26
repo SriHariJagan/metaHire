@@ -637,15 +637,15 @@ export default function Solutions() {
 
                   {/* Team members collaborating */}
                   <div className="pt-4 border-t border-white/10">
-                    <p className="text-xs text-white/50 mb-3">Active Team Members</p>
-                    <div className="flex items-center gap-3">
+                    <p className="text-xs text-white/50 mb-3 text-center sm:text-left">Active Team Members</p>
+                    <div className="flex flex-wrap items-center justify-center gap-3">
                       {/* Recruiter */}
                       <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-brand-green/15 border border-brand-green/30">
                         <Briefcase className="w-4 h-4 text-brand-green" />
                         <span className="text-xs font-medium text-brand-green">Recruiter</span>
                       </div>
                       {/* Arrow */}
-                      <svg className="w-6 h-4 text-white/30" viewBox="0 0 24 16" fill="none" stroke="currentColor" strokeWidth="2">
+                      <svg className="hidden w-6 h-4 text-white/30 sm:block" viewBox="0 0 24 16" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M0 8h20M16 2l6 6-6 6" />
                       </svg>
                       {/* Candidate */}
@@ -654,7 +654,7 @@ export default function Solutions() {
                         <span className="text-xs font-medium text-blue-400">Candidate</span>
                       </div>
                       {/* Arrow */}
-                      <svg className="w-6 h-4 text-white/30" viewBox="0 0 24 16" fill="none" stroke="currentColor" strokeWidth="2">
+                      <svg className="hidden w-6 h-4 text-white/30 sm:block" viewBox="0 0 24 16" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M0 8h20M16 2l6 6-6 6" />
                       </svg>
                       {/* Hiring Manager */}
@@ -670,7 +670,7 @@ export default function Solutions() {
 
             {/* Features */}
             <AnimDiv delay={200}>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {collabFeatures.map((f) => (
                   <div
                     key={f}
@@ -790,12 +790,12 @@ export default function Solutions() {
               {analyticsCharts.map((chart) => (
                 <div
                   key={chart.label}
-                  className="bg-white rounded-2xl p-6 border border-brand-gray-light/40 shadow-sm"
+                  className="bg-white rounded-2xl p-4 sm:p-6 border border-brand-gray-light/40 shadow-sm"
                 >
                   <h4 className="text-sm font-semibold text-brand-blue mb-4">
                     {chart.label}
                   </h4>
-                  <div className="flex items-end gap-3 h-36">
+                  <div className="flex items-end gap-1.5 sm:gap-3 h-36">
                     {chart.values.map((v, i) => {
                       const max = Math.max(...chart.values)
                       const pct = (v / max) * 100

@@ -1,6 +1,7 @@
 import { useInView } from '@/hooks/useInView'
 import SectionHeading from '@/components/SectionHeading'
 import CTASection from '@/components/CTASection'
+import { EcosystemSection } from '@/components/sections/home/EcosystemSection'
 import {
   Search,
   BarChart3,
@@ -545,7 +546,7 @@ export default function Home() {
                 <div className="space-y-8">
                   {workflowSteps.map((step, idx) => (
                     <div key={step.label} className="relative flex items-start gap-4">
-                      <div className="absolute -left-6 z-10 w-8 h-8 rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-sm">
+                      <div className="absolute -left-10 z-10 w-8 h-8 rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-sm">
                         <step.icon className="w-4 h-4 text-brand-green" />
                       </div>
                       <div>
@@ -1225,7 +1226,12 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          SECTION 12 — FINAL CTA
+          SECTION 12 — META ECOSYSTEM
+      ═══════════════════════════════════════════════════════════════ */}
+      <EcosystemSection />
+
+      {/* ═══════════════════════════════════════════════════════════════
+          SECTION 13 — FINAL CTA
       ═══════════════════════════════════════════════════════════════ */}
       <CTASection
         heading="Your Next Great Hire Starts Here."

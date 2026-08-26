@@ -1,6 +1,6 @@
-﻿import { useInView } from '@/hooks/useInView'
-import SectionHeading from '@/components/SectionHeading'
-import CTASection from '@/components/CTASection'
+﻿import { useInView } from "@/hooks/useInView";
+import SectionHeading from "@/components/SectionHeading";
+import CTASection from "@/components/CTASection";
 import {
   Target,
   TrendingUp,
@@ -25,194 +25,198 @@ import {
   Eye,
   RefreshCcw,
   Zap,
-} from 'lucide-react'
-import { Link } from 'react-router-dom'
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 function AnimDiv({
   children,
-  className = '',
+  className = "",
   delay = 0,
 }: {
-  children: React.ReactNode
-  className?: string
-  delay?: number
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
 }) {
-  const { ref, inView } = useInView()
+  const { ref, inView } = useInView();
   return (
     <div
       ref={ref}
-      className={className + ' transition-all duration-700 ' + (inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8')}
-      style={{ transitionDelay: delay + 'ms' }}
+      className={
+        className +
+        " transition-all duration-700 " +
+        (inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8")
+      }
+      style={{ transitionDelay: delay + "ms" }}
     >
       {children}
     </div>
-  )
+  );
 }
 
 const whyCards = [
   {
     icon: Target,
-    title: 'Purpose',
-    desc: 'Build technology that solves real hiring problems faced by organizations every day.',
+    title: "Purpose",
+    desc: "Build technology that solves real hiring problems faced by organizations every day.",
   },
   {
     icon: TrendingUp,
-    title: 'Growth',
-    desc: 'Learn, experiment, and grow continuously with support from experienced teammates.',
+    title: "Growth",
+    desc: "Learn, experiment, and grow continuously with support from experienced teammates.",
   },
   {
     icon: Lightbulb,
-    title: 'Ownership',
-    desc: 'Take ideas from concept to impact with the autonomy to drive meaningful outcomes.',
+    title: "Ownership",
+    desc: "Take ideas from concept to impact with the autonomy to drive meaningful outcomes.",
   },
   {
     icon: Sparkles,
-    title: 'Innovation',
-    desc: 'Work with modern technology and new ways of thinking that challenge the status quo.',
+    title: "Innovation",
+    desc: "Work with modern technology and new ways of thinking that challenge the status quo.",
   },
-]
+];
 
 const lifeCards = [
   {
     icon: Users,
-    title: 'Collaboration',
-    gradient: 'from-brand-green to-emerald-600',
+    title: "Collaboration",
+    gradient: "from-brand-green to-emerald-600",
   },
   {
     icon: BookOpen,
-    title: 'Learning',
-    gradient: 'from-brand-blue to-blue-600',
+    title: "Learning",
+    gradient: "from-brand-blue to-blue-600",
   },
   {
     icon: Sparkles,
-    title: 'Innovation',
-    gradient: 'from-purple-500 to-indigo-600',
+    title: "Innovation",
+    gradient: "from-purple-500 to-indigo-600",
   },
   {
     icon: Handshake,
-    title: 'Ownership',
-    gradient: 'from-amber-500 to-orange-600',
+    title: "Ownership",
+    gradient: "from-amber-500 to-orange-600",
   },
   {
     icon: BarChart3,
-    title: 'Impact',
-    gradient: 'from-rose-500 to-pink-600',
+    title: "Impact",
+    gradient: "from-rose-500 to-pink-600",
   },
   {
     icon: Sun,
-    title: 'Balance',
-    gradient: 'from-cyan-500 to-teal-600',
+    title: "Balance",
+    gradient: "from-cyan-500 to-teal-600",
   },
-]
+];
 
 const openPositions = [
   {
-    title: 'Senior Frontend Engineer',
-    department: 'Engineering',
-    location: 'Remote',
-    type: 'Full-time',
-    experience: '5+ years',
+    title: "Senior Frontend Engineer",
+    department: "Engineering",
+    location: "Remote",
+    type: "Full-time",
+    experience: "5+ years",
     description:
       "Lead the development of MetaHire's web application, building responsive interfaces with React and TypeScript that recruiters and candidates love to use.",
   },
   {
-    title: 'Product Manager',
-    department: 'Product',
-    location: 'Remote',
-    type: 'Full-time',
-    experience: '4+ years',
+    title: "Product Manager",
+    department: "Product",
+    location: "Remote",
+    type: "Full-time",
+    experience: "4+ years",
     description:
-      'Define and execute the product vision for core hiring features, working closely with engineering and design to deliver solutions that solve real customer problems.',
+      "Define and execute the product vision for core hiring features, working closely with engineering and design to deliver solutions that solve real customer problems.",
   },
   {
-    title: 'UX Designer',
-    department: 'Design',
-    location: 'Remote',
-    type: 'Full-time',
-    experience: '3+ years',
+    title: "UX Designer",
+    department: "Design",
+    location: "Remote",
+    type: "Full-time",
+    experience: "3+ years",
     description:
       "Design intuitive experiences across MetaHire's platform, from candidate application flows to recruiter dashboards, turning complex workflows into simple interactions.",
   },
   {
-    title: 'Backend Engineer',
-    department: 'Engineering',
-    location: 'Remote',
-    type: 'Full-time',
-    experience: '4+ years',
+    title: "Backend Engineer",
+    department: "Engineering",
+    location: "Remote",
+    type: "Full-time",
+    experience: "4+ years",
     description:
       "Design and build scalable APIs and services that power MetaHire's hiring platform, ensuring reliability and performance as the platform grows.",
   },
   {
-    title: 'Data Analyst',
-    department: 'Analytics',
-    location: 'Remote',
-    type: 'Full-time',
-    experience: '2+ years',
+    title: "Data Analyst",
+    department: "Analytics",
+    location: "Remote",
+    type: "Full-time",
+    experience: "2+ years",
     description:
-      'Transform hiring data into actionable insights, building dashboards and analyses that help customers optimize their recruitment process and make better decisions.',
+      "Transform hiring data into actionable insights, building dashboards and analyses that help customers optimize their recruitment process and make better decisions.",
   },
-]
+];
 
 const hiringSteps = [
   {
     icon: FileText,
-    title: 'Application',
-    desc: 'Submit your application with your resume and a brief introduction.',
+    title: "Application",
+    desc: "Submit your application with your resume and a brief introduction.",
   },
   {
     icon: Search,
-    title: 'Initial Review',
-    desc: 'Our team reviews your application and assesses fit for the role.',
+    title: "Initial Review",
+    desc: "Our team reviews your application and assesses fit for the role.",
   },
   {
     icon: MessageSquare,
-    title: 'Interview',
-    desc: 'A conversation to learn about your experience and understand your goals.',
+    title: "Interview",
+    desc: "A conversation to learn about your experience and understand your goals.",
   },
   {
     icon: Code,
-    title: 'Technical / Role Discussion',
-    desc: 'A deeper dive into your skills through a practical exercise or discussion.',
+    title: "Technical / Role Discussion",
+    desc: "A deeper dive into your skills through a practical exercise or discussion.",
   },
   {
     icon: CheckCircle,
-    title: 'Final Decision',
-    desc: 'We align internally and make a decision on the best candidate.',
+    title: "Final Decision",
+    desc: "We align internally and make a decision on the best candidate.",
   },
   {
     icon: Gift,
-    title: 'Offer',
-    desc: 'We extend an offer and welcome you to the MetaHire team.',
+    title: "Offer",
+    desc: "We extend an offer and welcome you to the MetaHire team.",
   },
-]
+];
 
 const cultureStatements = [
   {
     icon: Brain,
-    title: 'Curiosity',
-    desc: 'We ask questions, challenge assumptions, and seek to understand before building.',
+    title: "Curiosity",
+    desc: "We ask questions, challenge assumptions, and seek to understand before building.",
   },
   {
     icon: Zap,
-    title: 'Ownership',
+    title: "Ownership",
     desc: "We take responsibility for outcomes, not just tasks. If it matters, it's ours.",
   },
   {
     icon: Users,
-    title: 'Collaboration',
-    desc: 'The best results come from working together across disciplines with shared context.',
+    title: "Collaboration",
+    desc: "The best results come from working together across disciplines with shared context.",
   },
   {
     icon: Eye,
-    title: 'Transparency',
-    desc: 'We share information openly, give honest feedback, and keep each other informed.',
+    title: "Transparency",
+    desc: "We share information openly, give honest feedback, and keep each other informed.",
   },
   {
     icon: RefreshCcw,
-    title: 'Continuous Improvement',
+    title: "Continuous Improvement",
     desc: "We reflect on what worked, learn from what didn't, and get better every cycle.",
   },
-]
+];
 
 export default function Careers() {
   return (
@@ -223,8 +227,8 @@ export default function Careers() {
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
+              "linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
           }}
         />
 
@@ -238,14 +242,15 @@ export default function Careers() {
 
             <AnimDiv delay={100}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-black leading-[1.1] tracking-tight">
-                Build the{' '}
+                Build the{" "}
                 <span className="text-gradient">Future of Hiring</span>
               </h1>
             </AnimDiv>
 
             <AnimDiv delay={200}>
               <p className="mt-6 text-lg text-brand-gray-dark leading-relaxed max-w-xl mx-auto">
-                Join a team building technology that helps organizations and people find better opportunities.
+                Join a team building technology that helps organizations and
+                people find better opportunities.
               </p>
             </AnimDiv>
 
@@ -313,9 +318,9 @@ export default function Careers() {
               <AnimDiv key={card.title} delay={idx * 100}>
                 <div
                   className={
-                    'relative rounded-2xl p-8 bg-gradient-to-br ' +
+                    "relative rounded-2xl p-8 bg-gradient-to-br " +
                     card.gradient +
-                    ' text-white overflow-hidden group cursor-default'
+                    " text-white overflow-hidden group cursor-default"
                   }
                 >
                   <div className="absolute -top-6 -right-6 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
@@ -333,7 +338,10 @@ export default function Careers() {
       </section>
 
       {/* SECTION 04 — OPEN POSITIONS */}
-      <section id="open-positions" className="py-20 lg:py-28 bg-white scroll-mt-24">
+      <section
+        id="open-positions"
+        className="py-20 lg:py-28 bg-white scroll-mt-24"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimDiv>
             <SectionHeading
@@ -345,7 +353,8 @@ export default function Careers() {
           </AnimDiv>
 
           <p className="text-center text-sm text-brand-gray mt-4">
-            * These are example roles to showcase our team structure. We encourage you to reach out even if your role isn't listed.
+            * These are example roles to showcase our team structure. We
+            encourage you to reach out even if your role isn't listed.
           </p>
 
           <div className="mt-12 space-y-5">
@@ -419,7 +428,10 @@ export default function Careers() {
 
                 <div className="space-y-8">
                   {hiringSteps.map((step, idx) => (
-                    <div key={step.title} className="relative flex items-start gap-5">
+                    <div
+                      key={step.title}
+                      className="relative flex items-start gap-5"
+                    >
                       <div className="relative z-10 w-12 h-12 rounded-full bg-white border-2 border-brand-green flex items-center justify-center shadow-sm shrink-0">
                         <span className="text-sm font-bold text-brand-green">
                           {idx + 1}
@@ -489,5 +501,5 @@ export default function Careers() {
         primaryTo="/contact"
       />
     </main>
-  )
+  );
 }

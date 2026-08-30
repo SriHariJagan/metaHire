@@ -7,6 +7,12 @@ import About from './pages/About'
 import Solutions from './pages/Solutions'
 import Careers from './pages/Careers'
 import Contact from './pages/Contact'
+import { PrivacyPolicy } from './pages/legal/PrivacyPolicy'
+import { TermsOfService } from './pages/legal/TermsOfService'
+import { Cancellation } from './pages/legal/Cancellation'
+import { Security } from './pages/legal/Security'
+import { Compliance } from './pages/legal/Compliance'
+import { Sitemap } from './pages/legal/Sitemap'
 
 export default function App() {
   return (
@@ -20,6 +26,14 @@ export default function App() {
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/legal/terms-of-service" element={<TermsOfService />} />
+          <Route path="/legal/cancellation" element={<Cancellation />} />
+          <Route path="/legal/cancellation-and-refund" element={<Cancellation />} />
+          <Route path="/legal/refund" element={<Cancellation />} />
+          <Route path="/legal/security" element={<Security />} />
+          <Route path="/legal/compliance" element={<Compliance />} />
+          <Route path="/sitemap" element={<Sitemap />} />
         </Routes>
       </main>
       <Footer />

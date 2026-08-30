@@ -145,40 +145,20 @@ interface FooterSection {
 
 const FOOTER_SECTIONS: FooterSection[] = [
   {
-    heading: "Products",
+    heading: "OUR Products",
     links: [
-      { label: "MetaHealth", href: "https://metahealth.metadev.io", external: true, logo: metaHealth, logoDark: metaHealth },
-      { label: "MetaEdu", href: "https://metaedu.metadev.io", external: true, logo: metaEdu, logoDark: metaEduDark },
-      { label: "MetaGreen", href: "https://metagreen.metadev.io", external: true, logo: metaGreen, logoDark: metaGreenDark },
-      { label: "MetaFlow", href: "https://metaflow.metadev.io", external: true, logo: metaFlow, logoDark: metaFlow },
+      { label: "MetaHealth", href: "https://metahealth.live", external: true, logo: metaHealth, logoDark: metaHealth },
+      { label: "MetaEdu", href: "https://metaedu.in", external: true, logo: metaEdu, logoDark: metaEduDark },
+      { label: "MetaGreen", href: "https://metagreen.in", external: true, logo: metaGreen, logoDark: metaGreenDark },
+      { label: "MetaFlow", href: "https://metaflow.in", external: true, logo: metaFlow, logoDark: metaFlow },
       { label: "MetaHire", href: "/", external: false, logo: metaHire, logoDark: metaHireDark },
-      { label: "MetaCheck", href: "https://metacheck.metadev.io", external: true, logo: metaCheck, logoDark: metaCheckDark },
-      { label: "MetaAds", href: "https://metaads.metadev.io", external: true, logo: metaAds, logoDark: metaAdsDark },
-      { label: "MetaNav", href: "https://metanav.metadev.io", external: true, logo: metaNav, logoDark: metaNav },
-      { label: "MetaLedger", href: "https://metaledger.metadev.io", external: true, logo: metaLedger, logoDark: metaLedgerDark },
-      { label: "MetaCard", href: "https://metacard.metadev.io", external: true, logo: metaCard, logoDark: metaCardDark },
-      { label: "MetaIM", href: "https://metaim.metadev.io", external: true, logo: metaIm, logoDark: metaImDark },
-    ],
-  },
-  {
-    heading: "Solutions",
-    links: [
-      { label: "End-to-End Recruitment", href: "/solutions#recruitment-management" },
-      { label: "Talent Acquisition", href: "/solutions#talent-acquisition" },
-      { label: "Screening & Shortlisting", href: "/solutions#screening-shortlisting" },
-      { label: "Interview Management", href: "/solutions#interview-management" },
-      { label: "Collaborative Hiring", href: "/solutions#collaborative-hiring" },
-      { label: "Offer & Onboarding", href: "/solutions#offer-onboarding" },
-      { label: "Analytics & Insights", href: "/solutions#analytics-insights" },
-      { label: "Automation", href: "/solutions#automation" },
-    ],
-  },
-  {
-    heading: "Contact",
-    links: [
-      { label: "About Us", href: "/about" },
-      { label: "Careers", href: "/careers" },
-      { label: "Contact Us", href: "/contact" },
+      { label: "MetaCheck", href: "https://metacheck.in", external: true, logo: metaCheck, logoDark: metaCheckDark },
+      { label: "MetaAds", href: "https://metaads.in", external: true, logo: metaAds, logoDark: metaAdsDark },
+      { label: "MetaNav", href: "https://metanav.in", external: true, logo: metaNav, logoDark: metaNav },
+      { label: "MetaLedger", href: "https://metaledger.in", external: true, logo: metaLedger, logoDark: metaLedgerDark },
+      { label: "MetaCard", href: "https://metacard.in", external: true, logo: metaCard, logoDark: metaCardDark },
+      { label: "MetaIM", href: "https://metaledger.in", external: true, logo: metaIm, logoDark: metaImDark },
+      { label: "MetaPE", href: "https://metape.in", external: true, logo: metaCard, logoDark: metaCardDark },
     ],
   },
 ];
@@ -186,6 +166,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
 const LEGAL_LINKS = [
   { label: "Privacy Policy", href: "/legal/privacy-policy" },
   { label: "Terms of Service", href: "/legal/terms-of-service" },
+  { label: "Cancellation & Refunds", href: "/legal/cancellation" },
   { label: "Security", href: "/legal/security" },
   { label: "Compliance", href: "/legal/compliance" },
   { label: "Sitemap", href: "/sitemap" },

@@ -55,21 +55,21 @@ const channels = [
     icon: LifeBuoy,
     title: "Support",
     desc: "Account & pipeline help",
-    value: "support@metahire.metadev.io",
+    value: "support@metadev.in",
     gradient: "from-emerald-500 to-green-600",
   },
   {
     icon: Handshake,
     title: "Partnerships",
     desc: "Integrations & collaborations",
-    value: "partners@metahire.metadev.io",
+    value: "partnership@metadev.in",
     gradient: "from-teal-500 to-cyan-600",
   },
   {
     icon: UserPlus,
     title: "Careers",
     desc: "Questions about open roles",
-    value: "careers@metahire.metadev.io",
+    value: "careers@metadev.in",
     gradient: "from-amber-500 to-orange-600",
   },
   {
@@ -87,17 +87,11 @@ const METADEV_CONTACT_EMAILS = [
   "support@metadev.in",
 ];
 
-const METADEV_OFFICES = [
-  "Hyderabad, Telangana (HQ)",
-  "Bangalore, Karnataka",
-];
+const METADEV_OFFICES = ["Hyderabad, Telangana (HQ)", "Bangalore, Karnataka"];
 
 const METADEV_PHONES = ["+91 95595 59143"];
 
-const METADEV_HOURS = [
-  "Mon – Fri: 9AM – 6PM",
-  "Sat: 10AM – 4PM",
-];
+const METADEV_HOURS = ["Mon – Fri: 9AM – 6PM", "Sat: 10AM – 4PM"];
 
 interface FormData {
   name: string;
@@ -129,7 +123,9 @@ export default function Contact() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const validateForm = useCallback((): boolean => {
     const newErrors: FormErrors = {};
@@ -137,7 +133,8 @@ export default function Contact() {
     if (!formData.email.trim()) newErrors.email = "Email is required";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
       newErrors.email = "Invalid email format";
-    if (!formData.company.trim()) newErrors.company = "Company name is required";
+    if (!formData.company.trim())
+      newErrors.company = "Company name is required";
     if (!formData.reason) newErrors.reason = "Please select a reason";
     if (!formData.message.trim()) newErrors.message = "Message is required";
     else if (formData.message.trim().length < 20)
@@ -162,7 +159,15 @@ export default function Contact() {
         message: formData.message,
       });
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", company: "", reason: "demo", companySize: "", adSpend: "not-sure", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        reason: "demo",
+        companySize: "",
+        adSpend: "not-sure",
+        message: "",
+      });
     } catch {
       setSubmitStatus("error");
     } finally {
@@ -189,20 +194,21 @@ export default function Contact() {
           <Reveal variant="up">
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-green/20 bg-brand-green/5 px-4 py-1.5 mb-5">
               <Sparkles className="h-3.5 w-3.5 text-brand-green-dark" />
-              <span className="text-xs font-medium tracking-wide text-brand-green-dark">Get in touch</span>
+              <span className="text-xs font-medium tracking-wide text-brand-green-dark">
+                Get in touch
+              </span>
             </span>
           </Reveal>
           <Reveal variant="up" delay={100}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-blue">
               Let's build something{" "}
-              <span className="text-brand-gradient">
-                great together
-              </span>
+              <span className="text-brand-gradient">great together</span>
             </h1>
           </Reveal>
           <Reveal variant="up" delay={200}>
             <p className="mt-5 text-lg text-brand-gray-dark max-w-xl mx-auto">
-              Talk to our team about hiring automation, demos, or enterprise solutions.
+              Talk to our team about hiring automation, demos, or enterprise
+              solutions.
             </p>
           </Reveal>
           <Reveal variant="up" delay={300}>
@@ -232,12 +238,18 @@ export default function Contact() {
                 return (
                   <Reveal key={ch.title} variant="up" delay={index * 80}>
                     <div className="group bg-white rounded-2xl border border-slate-200 p-4 hover:border-brand-green/30 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                      <div className={`h-10 w-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${ch.gradient} shadow-md mb-3 group-hover:scale-110 transition-transform`}>
+                      <div
+                        className={`h-10 w-10 rounded-xl flex items-center justify-center bg-gradient-to-br ${ch.gradient} shadow-md mb-3 group-hover:scale-110 transition-transform`}
+                      >
                         <Icon className="h-5 w-5 text-white" />
                       </div>
-                      <h3 className="font-semibold text-brand-blue text-sm">{ch.title}</h3>
+                      <h3 className="font-semibold text-brand-blue text-sm">
+                        {ch.title}
+                      </h3>
                       <p className="text-xs text-slate-400 mt-0.5">{ch.desc}</p>
-                      <p className="text-xs font-medium mt-2 text-brand-green truncate">{ch.value}</p>
+                      <p className="text-xs font-medium mt-2 text-brand-green truncate">
+                        {ch.value}
+                      </p>
                     </div>
                   </Reveal>
                 );
@@ -265,21 +277,50 @@ export default function Contact() {
               <Reveal variant="left" delay={100}>
                 <div className="mt-8 space-y-4">
                   {[
-                    { icon: Mail, title: "Email", lines: METADEV_CONTACT_EMAILS, gradient: "from-emerald-500 to-green-600" },
-                    { icon: MapPin, title: "Offices", lines: METADEV_OFFICES, gradient: "from-teal-500 to-cyan-600" },
-                    { icon: Phone, title: "Phone", lines: METADEV_PHONES, gradient: "from-lime-500 to-green-600" },
-                    { icon: Clock, title: "Hours", lines: METADEV_HOURS, gradient: "from-orange-500 to-amber-600" },
+                    {
+                      icon: Mail,
+                      title: "Email",
+                      lines: METADEV_CONTACT_EMAILS,
+                      gradient: "from-emerald-500 to-green-600",
+                    },
+                    {
+                      icon: MapPin,
+                      title: "Offices",
+                      lines: METADEV_OFFICES,
+                      gradient: "from-teal-500 to-cyan-600",
+                    },
+                    {
+                      icon: Phone,
+                      title: "Phone",
+                      lines: METADEV_PHONES,
+                      gradient: "from-lime-500 to-green-600",
+                    },
+                    {
+                      icon: Clock,
+                      title: "Hours",
+                      lines: METADEV_HOURS,
+                      gradient: "from-orange-500 to-amber-600",
+                    },
                   ].map((item) => {
                     const Icon = item.icon;
                     return (
-                      <div key={item.title} className="flex items-start gap-3 group">
-                        <div className={`h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${item.gradient} shadow-md group-hover:scale-110 transition-transform`}>
+                      <div
+                        key={item.title}
+                        className="flex items-start gap-3 group"
+                      >
+                        <div
+                          className={`h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${item.gradient} shadow-md group-hover:scale-110 transition-transform`}
+                        >
                           <Icon className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-brand-blue text-sm">{item.title}</h3>
+                          <h3 className="font-semibold text-brand-blue text-sm">
+                            {item.title}
+                          </h3>
                           {item.lines.map((line) => (
-                            <p key={line} className="text-sm text-slate-500">{line}</p>
+                            <p key={line} className="text-sm text-slate-500">
+                              {line}
+                            </p>
                           ))}
                         </div>
                       </div>
@@ -290,20 +331,40 @@ export default function Contact() {
 
               <Reveal variant="left" delay={200}>
                 <div className="mt-8 rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
-                  <h3 className="font-semibold text-brand-blue text-sm mb-3">Response times</h3>
+                  <h3 className="font-semibold text-brand-blue text-sm mb-3">
+                    Response times
+                  </h3>
                   <div className="space-y-2">
                     {[
-                      { label: "Demo requests", time: "< 4 hrs", color: "#22C55E" },
+                      {
+                        label: "Demo requests",
+                        time: "< 4 hrs",
+                        color: "#22C55E",
+                      },
                       { label: "Pricing", time: "< 8 hrs", color: "#14B8A6" },
-                      { label: "Enterprise", time: "< 24 hrs", color: "#F59E0B" },
+                      {
+                        label: "Enterprise",
+                        time: "< 24 hrs",
+                        color: "#F59E0B",
+                      },
                       { label: "Support", time: "< 1 hr", color: "#EC4899" },
                     ].map((item) => (
-                      <div key={item.label} className="flex items-center justify-between">
+                      <div
+                        key={item.label}
+                        className="flex items-center justify-between"
+                      >
                         <div className="flex items-center gap-2">
-                          <div className="h-2 w-2 rounded-full" style={{ backgroundColor: item.color }} />
-                          <span className="text-xs text-slate-600">{item.label}</span>
+                          <div
+                            className="h-2 w-2 rounded-full"
+                            style={{ backgroundColor: item.color }}
+                          />
+                          <span className="text-xs text-slate-600">
+                            {item.label}
+                          </span>
                         </div>
-                        <span className="text-xs font-bold text-brand-green-dark">{item.time}</span>
+                        <span className="text-xs font-bold text-brand-green-dark">
+                          {item.time}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -315,15 +376,26 @@ export default function Contact() {
             <div className="h-full">
               <Reveal variant="right" delay={100}>
                 {submitStatus === "success" ? (
-                  <div className="rounded-3xl bg-white border border-slate-200 p-10 text-center shadow-soft h-full flex flex-col items-center justify-center" role="status">
+                  <div
+                    className="rounded-3xl bg-white border border-slate-200 p-10 text-center shadow-soft h-full flex flex-col items-center justify-center"
+                    role="status"
+                  >
                     <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-brand-green to-emerald-500 mb-5 shadow-lg">
                       <CheckCircle2 className="h-8 w-8 text-white" />
                     </div>
-                    <h2 className="text-2xl font-bold text-brand-blue">Message sent!</h2>
+                    <h2 className="text-2xl font-bold text-brand-blue">
+                      Message sent!
+                    </h2>
                     <p className="mt-3 text-slate-600 max-w-sm">
-                      We'll review your message and get back to you within our committed response time.
+                      We'll review your message and get back to you within our
+                      committed response time.
                     </p>
-                    <Button variant="brand" size="lg" className="mt-6" onClick={() => setSubmitStatus("idle")}>
+                    <Button
+                      variant="brand"
+                      size="lg"
+                      className="mt-6"
+                      onClick={() => setSubmitStatus("idle")}
+                    >
                       Send another
                       <ArrowRight className="h-4 w-4" />
                     </Button>
@@ -335,28 +407,108 @@ export default function Contact() {
                     className="rounded-3xl bg-white border border-slate-200 p-5 sm:p-7 shadow-soft relative overflow-hidden h-full flex flex-col"
                   >
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-green via-emerald-400 to-teal-500" />
-                    
+
                     <div className="mb-5">
-                      <h2 className="text-xl font-bold text-brand-blue">Send us a message</h2>
-                      <p className="text-sm text-slate-500 mt-1">Fill out the form below and we'll get back to you shortly.</p>
+                      <h2 className="text-xl font-bold text-brand-blue">
+                        Send us a message
+                      </h2>
+                      <p className="text-sm text-slate-500 mt-1">
+                        Fill out the form below and we'll get back to you
+                        shortly.
+                      </p>
                     </div>
 
                     <div className="flex-1 flex flex-col gap-4">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <Input label="Full name" name="name" value={formData.name} onChange={(e) => handleChange("name", e.target.value)} error={errors.name} required placeholder="Priya Sharma" autoComplete="name" />
-                        <Input label="Work email" type="email" name="email" value={formData.email} onChange={(e) => handleChange("email", e.target.value)} error={errors.email} required placeholder="priya@company.com" autoComplete="email" />
+                        <Input
+                          label="Full name"
+                          name="name"
+                          value={formData.name}
+                          onChange={(e) => handleChange("name", e.target.value)}
+                          error={errors.name}
+                          required
+                          placeholder="Priya Sharma"
+                          autoComplete="name"
+                        />
+                        <Input
+                          label="Work email"
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={(e) =>
+                            handleChange("email", e.target.value)
+                          }
+                          error={errors.email}
+                          required
+                          placeholder="priya@company.com"
+                          autoComplete="email"
+                        />
                       </div>
-                      <Input label="Company" name="company" value={formData.company} onChange={(e) => handleChange("company", e.target.value)} error={errors.company} required placeholder="Lumenkart" autoComplete="organization" />
-                      <Select label="How can we help?" name="reason" value={formData.reason} onChange={(e) => handleChange("reason", e.target.value)} options={CONTACT_REASONS} error={errors.reason} required />
+                      <Input
+                        label="Company"
+                        name="company"
+                        value={formData.company}
+                        onChange={(e) =>
+                          handleChange("company", e.target.value)
+                        }
+                        error={errors.company}
+                        required
+                        placeholder="Lumenkart"
+                        autoComplete="organization"
+                      />
+                      <Select
+                        label="How can we help?"
+                        name="reason"
+                        value={formData.reason}
+                        onChange={(e) => handleChange("reason", e.target.value)}
+                        options={CONTACT_REASONS}
+                        error={errors.reason}
+                        required
+                      />
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <Select label="Company size" name="companySize" value={formData.companySize} onChange={(e) => handleChange("companySize", e.target.value)} options={COMPANY_SIZES} placeholderOption="Select size" />
-                        <Select label="Hiring volume" name="adSpend" value={formData.adSpend} onChange={(e) => handleChange("adSpend", e.target.value)} options={HIRING_VOLUMES} placeholderOption="Select volume" />
+                        <Select
+                          label="Company size"
+                          name="companySize"
+                          value={formData.companySize}
+                          onChange={(e) =>
+                            handleChange("companySize", e.target.value)
+                          }
+                          options={COMPANY_SIZES}
+                          placeholderOption="Select size"
+                        />
+                        <Select
+                          label="Hiring volume"
+                          name="adSpend"
+                          value={formData.adSpend}
+                          onChange={(e) =>
+                            handleChange("adSpend", e.target.value)
+                          }
+                          options={HIRING_VOLUMES}
+                          placeholderOption="Select volume"
+                        />
                       </div>
-                      <Textarea label="Message" name="message" value={formData.message} onChange={(e) => handleChange("message", e.target.value)} error={errors.message} required rows={3} placeholder="Tell us about your hiring needs..." className="flex-1" />
+                      <Textarea
+                        label="Message"
+                        name="message"
+                        value={formData.message}
+                        onChange={(e) =>
+                          handleChange("message", e.target.value)
+                        }
+                        error={errors.message}
+                        required
+                        rows={3}
+                        placeholder="Tell us about your hiring needs..."
+                        className="flex-1"
+                      />
                     </div>
 
                     <div className="mt-5 flex flex-col sm:flex-row gap-3">
-                      <Button type="submit" size="lg" className="flex-1 group" disabled={isSubmitting}>
+                      <Button
+                        type="submit"
+                        size="lg"
+                        className="flex-1 group"
+                        disabled={isSubmitting}
+                      >
                         {isSubmitting ? (
                           <>
                             <Loader2 className="h-4 w-4 animate-spin" />
@@ -369,15 +521,35 @@ export default function Contact() {
                           </>
                         )}
                       </Button>
-                      <Button type="button" variant="secondary" size="lg" onClick={() => { setFormData({ name: "", email: "", company: "", reason: "demo", companySize: "", adSpend: "not-sure", message: "" }); setErrors({}); }}>
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        size="lg"
+                        onClick={() => {
+                          setFormData({
+                            name: "",
+                            email: "",
+                            company: "",
+                            reason: "demo",
+                            companySize: "",
+                            adSpend: "not-sure",
+                            message: "",
+                          });
+                          setErrors({});
+                        }}
+                      >
                         Clear
                       </Button>
                     </div>
 
                     {submitStatus === "error" && (
-                      <div className="mt-3 p-3 rounded-xl bg-red-50 border border-red-200" role="alert">
+                      <div
+                        className="mt-3 p-3 rounded-xl bg-red-50 border border-red-200"
+                        role="alert"
+                      >
                         <p className="text-sm text-red-600 text-center font-medium">
-                          Something went wrong. Please try again or email us directly.
+                          Something went wrong. Please try again or email us
+                          directly.
                         </p>
                       </div>
                     )}

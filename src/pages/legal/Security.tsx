@@ -1,4 +1,5 @@
 import { ShieldCheck, Lock, Eye, Bug, KeyRound, Server } from "lucide-react"
+import { SEO } from '@/seo/SEO';
 import { LegalLayout, type TocItem } from "@/components/legal/LegalLayout"
 
 const TOC: TocItem[] = [
@@ -15,7 +16,9 @@ const TOC: TocItem[] = [
 
 export function Security() {
   return (
-    <LegalLayout
+    <>
+      <SEO />
+      <LegalLayout
       icon={ShieldCheck}
       eyebrow="Trust — Security"
       title="Security"
@@ -101,5 +104,6 @@ export function Security() {
       <p>For abuse or fraud involving a MetaDev product, write to <a href="mailto:support@metadev.in">support@metadev.in</a>.</p>
       <p className="text-xs text-slate-500">This page describes our approach at a high level. Customer contracts, DPAs, and product security addenda contain binding commitments.</p>
     </LegalLayout>
+    </>
   )
 }

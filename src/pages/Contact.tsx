@@ -1,5 +1,6 @@
 // Contact.tsx — Clean full-height contact page
 import { useState, useCallback } from "react";
+import { SEO } from '@/seo/SEO';
 import { Reveal, SectionHeading } from "@/components/common";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
@@ -62,7 +63,7 @@ const channels = [
     icon: Handshake,
     title: "Partnerships",
     desc: "Integrations & collaborations",
-    value: "partnership@metadev.in",
+    value: "partnership@metahire.in",
     gradient: "from-teal-500 to-cyan-600",
   },
   {
@@ -183,7 +184,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <>
+      <SEO />
+      <div className="min-h-screen bg-white flex flex-col">
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-brand-offwhite via-brand-green-50 to-white pt-28 pb-12 lg:pt-36 overflow-hidden">
         <div className="absolute inset-0" aria-hidden="true">
@@ -561,5 +564,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }

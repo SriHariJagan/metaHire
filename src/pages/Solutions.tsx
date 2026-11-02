@@ -1,4 +1,5 @@
 import { useInView } from '@/hooks/useInView'
+import { SEO } from '@/seo/SEO';
 import SectionHeading from '@/components/SectionHeading'
 import CTASection from '@/components/CTASection'
 import {
@@ -199,7 +200,9 @@ const integrationCategories = [
 
 export default function Solutions() {
   return (
-    <main className="overflow-hidden">
+    <>
+      <SEO />
+      <main className="overflow-hidden">
       {/* ═══════════════════════════════════════════════════════════════
           SECTION 01 — HERO
       ═══════════════════════════════════════════════════════════════ */}
@@ -965,5 +968,6 @@ export default function Solutions() {
         dark
       />
     </main>
+    </>
   )
 }

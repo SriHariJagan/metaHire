@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { SEO } from '@/seo/SEO';
 import { Map, Building2, Package, Layers, Users, Mail, ShieldCheck, FileText, Award, Network } from "lucide-react"
 import { LegalLayout } from "@/components/legal/LegalLayout"
 
@@ -83,7 +84,9 @@ const GROUPS = [
 
 export function Sitemap() {
   return (
-    <LegalLayout
+    <>
+      <SEO />
+      <LegalLayout
       icon={Map}
       eyebrow="Navigate — Sitemap"
       title="Sitemap"
@@ -133,10 +136,11 @@ export function Sitemap() {
       <p>Try search or write to us:</p>
       <ul>
         <li><Mail size={14} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} /><a href="mailto:support@metadev.in">support@metadev.in</a> — general & support</li>
-        <li><Award size={14} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} /><a href="mailto:business@metadev.in">business@metadev.in</a> — partnerships & sales</li>
+        <li><Award size={14} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} /><a href="mailto:partnership@metahire.in">partnership@metahire.in</a> — partnerships & sales</li>
         <li><ShieldCheck size={14} style={{ display: "inline", verticalAlign: "-2px", marginRight: 6 }} /><a href="mailto:info@metadev.in">info@metadev.in</a> — legal & compliance</li>
       </ul>
       <p className="text-xs text-slate-500">Last audited 28 August 2026. New products and solutions are added here on launch.</p>
     </LegalLayout>
+    </>
   )
 }

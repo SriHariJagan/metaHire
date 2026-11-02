@@ -1,4 +1,5 @@
 import { Award, FileCheck2, Globe2, Scale, ShieldCheck, BadgeCheck } from "lucide-react"
+import { SEO } from '@/seo/SEO';
 import { LegalLayout, type TocItem } from "@/components/legal/LegalLayout"
 
 const TOC: TocItem[] = [
@@ -14,7 +15,9 @@ const TOC: TocItem[] = [
 
 export function Compliance() {
   return (
-    <LegalLayout
+    <>
+      <SEO />
+      <LegalLayout
       icon={Award}
       eyebrow="Trust — Compliance"
       title="Compliance"
@@ -51,7 +54,7 @@ export function Compliance() {
           </tbody>
         </table>
       </div>
-      <p>Copies or summaries are available under NDA via <a href="mailto:business@metadev.in">business@metadev.in</a>.</p>
+      <p>Copies or summaries are available under NDA via <a href="mailto:partnership@metahire.in">partnership@metahire.in</a>.</p>
 
       <h2 id="india">3. India — DPDP Act & IT Act</h2>
       <p>As a Data Fiduciary under the <strong>Digital Personal Data Protection Act, 2023</strong> and a body corporate under the <strong>IT Act, 2000 (SPDI Rules)</strong>, we:</p>
@@ -107,8 +110,9 @@ export function Compliance() {
       </ul>
 
       <h2 id="contact">8. Contact & requests</h2>
-      <p><strong>Business / Compliance:</strong> <a href="mailto:business@metadev.in">business@metadev.in</a> · <strong>Privacy:</strong> <a href="mailto:contact@metadev.in">contact@metadev.in</a> · <strong>General:</strong> <a href="mailto:info@metadev.in">info@metadev.in</a> · <strong>Technical:</strong> <a href="mailto:tech@metadev.in">tech@metadev.in</a></p>
+      <p><strong>Partnership / Compliance:</strong> <a href="mailto:partnership@metahire.in">partnership@metahire.in</a> · <strong>Privacy:</strong> <a href="mailto:contact@metadev.in">contact@metadev.in</a> · <strong>General:</strong> <a href="mailto:info@metadev.in">info@metadev.in</a> · <strong>Technical:</strong> <a href="mailto:tech@metadev.in">tech@metadev.in</a></p>
       <p>Postal: MetaDev Innovations Pvt. Ltd., Hyderabad, Telangana, India. We aim to respond within 2 business days and to close assurance-pack requests within 10 business days.</p>
     </LegalLayout>
+    </>
   )
 }

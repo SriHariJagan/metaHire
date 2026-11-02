@@ -1,4 +1,5 @@
 import { useInView } from '@/hooks/useInView'
+import { SEO } from '@/seo/SEO';
 import SectionHeading from '@/components/SectionHeading'
 import CTASection from '@/components/CTASection'
 import { FoundersSection } from '@/components/sections/about/FoundersSection'
@@ -154,7 +155,9 @@ const challengeCards = [
 
 export default function About() {
   return (
-    <main className="overflow-hidden">
+    <>
+      <SEO />
+      <main className="overflow-hidden">
       {/* ═══════════════════════════════════════════════════════════════
           SECTION 01 — HERO
       ═══════════════════════════════════════════════════════════════ */}
@@ -514,5 +517,6 @@ export default function About() {
         primaryTo="/contact"
       />
     </main>
+    </>
   )
 }

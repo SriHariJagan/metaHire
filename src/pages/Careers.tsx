@@ -1,4 +1,5 @@
 ﻿import { useInView } from "@/hooks/useInView";
+import { SEO } from '@/seo/SEO';
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
 import {
@@ -220,7 +221,9 @@ const cultureStatements = [
 
 export default function Careers() {
   return (
-    <main className="overflow-hidden">
+    <>
+      <SEO />
+      <main className="overflow-hidden">
       {/* SECTION 01 — HERO */}
       <section className="relative bg-gradient-to-br from-brand-offwhite via-brand-green-50 to-white pt-24 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
         <div
@@ -501,5 +504,6 @@ export default function Careers() {
         primaryTo="/contact"
       />
     </main>
+    </>
   );
 }

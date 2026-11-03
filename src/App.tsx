@@ -3,6 +3,7 @@ import { SEO } from './seo/SEO';
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import { Footer } from './components/footer/Footer'
+import { PageScrollbar } from '@/components/common/PageScrollbar'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -41,6 +42,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <PageScrollbar />
     </div>
   )
 }
